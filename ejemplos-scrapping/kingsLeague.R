@@ -89,7 +89,7 @@ ranking <- fullTibble |>
   filter(día == max(día))
 
 #guardamos el archivo del ranking
-write_csv(ranking, "ejemplos-scrapping-bcn/rankingKL.csv")
+write_csv(ranking, "ejemplos-scrapping/rankingKL.csv")
 
 
 
