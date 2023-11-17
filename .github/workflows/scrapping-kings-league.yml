@@ -22,7 +22,7 @@ jobs:
         R -e 'install.packages("rvest")'
     
     - name: scrape
-      run: Rscript 'ejemplos-scrapping-bcn/kingsLeague.R'
+      run: Rscript 'ejemplos-scrapping/kingsLeague.R'
 
     - name: Commit files
       run: |
