@@ -567,7 +567,7 @@
 	</Slide>
 
 	<Slide>
-		<p>Ejemplos de scrapping en <a href="https://github.com/adrimaqueda/r-barcelona/tree/main/ejemplos-scrapping">este repositorio</a></p>
+		<p>Ejemplos de scrapping en <a style="border-bottom: solid 2px" href="https://github.com/adrimaqueda/r-barcelona/tree/main/ejemplos-scrapping">este repositorio</a></p>
 	</Slide>
 
 	<Slide animate>
