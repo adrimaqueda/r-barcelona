@@ -1,0 +1,37 @@
+name: scrapping-kings-league
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * MON'
+
+permissions:
+  contents: write
+
+jobs:
+  scrapping:
+    runs-on: macos-latest
+
+    steps: 
+    - uses: actions/checkout@v4
+    - uses: r-lib/actions/setup-r@v2
+
+    - name: Install packages
+      run: |
+        R -e 'install.packages("tidyverse")'
+        R -e 'install.packages("rvest")'
+    
+    - name: scrape
+      run: Rscript 'ejemplos-scrapping-bcn/kingsLeague.R'
+
+    - name: Commit files
+      run: |
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com"
+        git add 'ejemplos-scrapping-bcn/*'
+        git commit -am "GH ACTION KL ranking: $(date)"
+        git push origin main
+      
+      env:
+        REPO_KEY: ${{github.token}}
+        username: github-actions
